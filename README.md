@@ -2,7 +2,7 @@
 A rewrite of NANDWay in Python 3.
 
 ## About
-This is a lazy re-write of NANDWay - originally a Python 2 script - in Python 3.
+This is a crude re-write of NANDWay - originally a Python 2 script - in Python 3.
 It requires Python 3.10 or later and PySerial.
 
 I have written this with Pylint as my guide - I squished bugs until Pylint stopped screaming at me, then I shipped it.
