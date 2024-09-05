@@ -395,7 +395,7 @@ class NANDFlasher(TeensySerial):
                 dump_size_progress = (
                     page-(block_offset*self.nand_pages_per_block)+1)*self.nand_page_size_plus_ras/1024
                 dump_size_total = nblocks*self.nand_block_size_plus_ras/1024
-                print(f"\r{dump_size_progress} KB / {dump_size_total} KB")
+                print(f"{dump_size_progress} KB / {dump_size_total} KB", end="\r")
                 sys.stdout.flush()
 
     def program_block(self, data: bytes, pgblock: int, verify: bool):
@@ -476,7 +476,7 @@ class NANDFlasher(TeensySerial):
 
             write_progress = ((block+1)*self.nand_block_size_plus_ras)/1024
             write_total = (nblocks*self.nand_block_size_plus_ras)/1024
-            print(f"\r{write_progress} KB / {write_total} KB")
+            print(f"{write_progress} KB / {write_total} KB", end="\r")
             # print "\r%d KB / %d KB"%(((block+1)*self.NAND_BLOCK_SZ_PLUS_RAS)/1024, (nblocks*self.NAND_BLOCK_SZ_PLUS_RAS)/1024),
             sys.stdout.flush()
 
@@ -583,7 +583,7 @@ if __name__ == "__main__":
             # print "\r%d KB / %d KB"%(((block+1)*(block_plus_ras_sz))/1024, (nblocks*(block_plus_ras_sz))/1024),
             bblock_progress = ((block+1)*(block_plus_ras_sz))/1024
             bblock_total = (nblocks*(block_plus_ras_sz))/1024
-            print(f"\r{bblock_progress} KB / {bblock_total} KB")
+            print(f"{bblock_progress} KB / {bblock_total} KB", end="\r")
             sys.stdout.flush()
 
             block += 1
